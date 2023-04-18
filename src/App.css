@@ -1,0 +1,10 @@
+.app {
+    margin: 0 auto;
+    max-width: 730px;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    margin-top: -1.5rem;
+}

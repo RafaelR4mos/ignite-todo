@@ -1,0 +1,29 @@
+.searchBarContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.searchBar {
+    background-color: var(--gray-500);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid var(--gray-700);
+    min-width: 640px;
+}
+
+.searchBarContainer input {
+    background-color: transparent;
+    width: 100%;
+}
+
+.searchBarContainer button[type="submit"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--blue-dark);
+    font-weight: 700;
+}

@@ -1,0 +1,5 @@
+.taskItemContainer {
+    display: flex;
+    align-items: flex-start;
+    background-color: red;
+}
