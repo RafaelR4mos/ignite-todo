@@ -1,5 +1,44 @@
 .taskItemContainer {
     display: flex;
+    align-items: center;
+    padding: 1.2rem 1rem;
+    gap: 0.75rem;
+    background-color: var(--gray-500);
     align-items: flex-start;
-    background-color: red;
+    border-radius: 8px;
+    border: 1px solid var(--gray-400);
+}
+
+.taskItemContainer p {
+    flex: 1;
+}
+
+.taskChecked {
+    text-decoration: line-through;
+    color: var(--gray-300);
+}
+
+.taskItemContainer p::first-letter {
+    text-transform: capitalize;
+}
+
+.taskItemContainer input {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: 1.5px solid var(--blue);
+    border-radius: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+}
+
+.taskItemContainer input:checked {
+    background: var(--purple-dark);
+    border: none;
+}
+
+.taskItemContainer button {
+    background: transparent;
 }

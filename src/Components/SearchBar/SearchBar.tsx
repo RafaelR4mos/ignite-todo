@@ -1,11 +1,32 @@
+import { useState } from "react";
 import styles from "./SearchBar.module.css";
 import { Plus } from "@phosphor-icons/react";
 
-export const SearchBar: React.FC = () => {
+interface searchBarProps {
+    onSubmitTask: (taskTitleValue: string) => void;
+}
+
+export const SearchBar: React.FC<searchBarProps> = ({ onSubmitTask }) => {
+    const [taskTitle, setTaskTitle] = useState("");
+
     return (
-        <form className={styles.searchBarContainer}>
+        <form
+            className={styles.searchBarContainer}
+            onSubmit={(e) => {
+                console.log(e);
+                e.preventDefault();
+                setTaskTitle("");
+                onSubmitTask(taskTitle);
+            }}
+        >
             <div className={styles.searchBar}>
-                <input type="text" placeholder="Adicione uma nova tarefa" />
+                <input
+                    type="text"
+                    required
+                    value={taskTitle}
+                    onChange={(e) => setTaskTitle(e.target.value)}
+                    placeholder="Adicione uma nova tarefa"
+                />
             </div>
             <button type="submit">
                 Criar

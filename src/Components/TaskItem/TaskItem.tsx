@@ -1,16 +1,25 @@
-import styles from "./taskItem.module.css";
-import { TrashSimple } from "@phosphor-icons/react";
+import styles from "./TaskItem.module.css";
+import { Trash } from "@phosphor-icons/react";
 
-export const TaskItem: React.FC = () => {
+interface ItaskItemProps {
+    title: string;
+    isComplete: boolean;
+    onCheckTask: () => void;
+    onDeleteTask: () => void;
+}
+
+export const TaskItem: React.FC<ItaskItemProps> = ({
+    title,
+    isComplete,
+    onCheckTask,
+    onDeleteTask,
+}) => {
     return (
         <div className={styles.taskItemContainer}>
-            <input type="checkbox" />
-            <p>
-                Integer urna interdum massa libero auctor neque turpis turpis
-                semper. Duis vel sed fames integer.
-            </p>
-            <button>
-                <TrashSimple />
+            <input type="checkbox" checked={isComplete} onClick={onCheckTask} />
+            <p className={isComplete ? styles.taskChecked : ""}>{title}</p>
+            <button onClick={onDeleteTask}>
+                <Trash fontSize={20} alt="Botão deletar" />
             </button>
         </div>
     );
