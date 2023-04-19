@@ -12,11 +12,7 @@ export interface ITasks {
 }
 
 function App() {
-    const [tasks, setTasks] = useState<ITasks[]>([
-        { id: uuidv4(), title: "lavar a louça", isComplete: true },
-        { id: uuidv4(), title: "arrumar o quarto", isComplete: false },
-        { id: uuidv4(), title: "estudar BD", isComplete: true },
-    ]);
+    const [tasks, setTasks] = useState<ITasks[]>([]);
 
     const handleAddNewTask = (taskTitle: string) => {
         taskTitle.length > 3
